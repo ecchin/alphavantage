@@ -236,7 +236,7 @@ namespace alphavantage
                 //StreamWriter connect6 = new StreamWriter(@"summary.txt", true, Encoding.Default);
 
 
-                MessageBox.Show(@AppDomain.CurrentDomain.BaseDirectory + "stocklist.txt");
+                //MessageBox.Show(@AppDomain.CurrentDomain.BaseDirectory + "stocklist.txt");
                 string stockl = null;
 
                 while ((stockl = stocklist.ReadLine()) != null)
