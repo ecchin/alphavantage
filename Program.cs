@@ -232,11 +232,7 @@ namespace alphavantage
 
 
                 StreamReader stocklist = new StreamReader(@AppDomain.CurrentDomain.BaseDirectory + "stocklist.txt", Encoding.Default);
-                //StreamWriter connect5 = new StreamWriter(@function + interval + ".txt", true, Encoding.Default);
-                //StreamWriter connect6 = new StreamWriter(@"summary.txt", true, Encoding.Default);
-
-
-                //MessageBox.Show(@AppDomain.CurrentDomain.BaseDirectory + "stocklist.txt");
+             
                 string stockl = null;
 
                 while ((stockl = stocklist.ReadLine()) != null)
@@ -255,11 +251,7 @@ namespace alphavantage
 
 
                     HSSFWorkbook wb;
-                    HSSFSheet sh;
-
-
-                    //if (!File.Exists(@symbol + "_daily.txt" + "test.xls"))
-                    //{                 
+                    HSSFSheet sh;          
                     wb = HSSFWorkbook.Create(InternalWorkbook.CreateWorkbook());
 
                     // create sheet
@@ -267,6 +259,10 @@ namespace alphavantage
                     IDataFormat dataFormatCustom = wb.CreateDataFormat();
                     ICellStyle style1 = wb.CreateCellStyle();
                     style1.DataFormat = dataFormatCustom.GetFormat("MM/dd/yyyy HH:mm:ss AM/PM");
+
+                    XSSFWorkbook wbx;
+                    XSSFSheet shx;
+
 
                     for (int x = 0; x < prices.Count; x++)
                     {
